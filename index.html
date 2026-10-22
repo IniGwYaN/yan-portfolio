@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f6fb">
+  <meta name="description" content="Portofolio YAN — teknologi, eksperimen Android, pengembangan aplikasi, dan proyek digital.">
+  <title>YAN — Personal Portfolio</title>
+  <style>
+    :root {
+      --bg: #f4f6fb;
+      --ink: #171a25;
+      --muted: #697185;
+      --line: rgba(255,255,255,.8);
+      --glass: rgba(255,255,255,.56);
+      --glass-strong: rgba(255,255,255,.78);
+      --blue: #5578f5;
+      --cyan: #63d9d0;
+      --violet: #a18cff;
+      --shadow: 0 24px 80px rgba(52,67,117,.12);
+      --radius: 26px;
+      --max: 1120px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+    body {
+      margin: 0; color: var(--ink);
+      background:
+        radial-gradient(ellipse at 8% 4%, rgba(99,217,208,.38), transparent 28rem),
+        radial-gradient(ellipse at 95% 13%, rgba(161,140,255,.34), transparent 32rem),
+        radial-gradient(ellipse at 55% 60%, rgba(85,120,245,.10), transparent 34rem),
+        var(--bg);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.65; overflow-x: hidden;
+    }
+    body::before {
+      content:""; position:fixed; inset:0; pointer-events:none; z-index:-1; opacity:.22;
+      background-image: linear-gradient(rgba(80,95,130,.08) 1px, transparent 1px), linear-gradient(90deg, rgba(80,95,130,.08) 1px, transparent 1px);
+      background-size: 42px 42px;
+      mask-image: linear-gradient(to bottom, black, transparent 72%);
+    }
+    a { color:inherit; text-decoration:none; }
+    button { font:inherit; }
+    .wrap { width:min(var(--max), calc(100% - 40px)); margin-inline:auto; }
+    .nav-shell { position:sticky; top:12px; z-index:20; padding-top:12px; }
+    .nav {
+      display:flex; align-items:center; justify-content:space-between; gap:20px;
+      padding:12px 16px 12px 22px; border:1px solid var(--line); border-radius:19px;
+      background:rgba(255,255,255,.64); backdrop-filter:blur(24px) saturate(1.5);
+      -webkit-backdrop-filter:blur(24px) saturate(1.5); box-shadow:0 8px 32px rgba(51,64,100,.08);
+    }
+    .brand { font-weight:900; letter-spacing:.12em; font-size:1.04rem; }
+    .brand span { color:var(--blue); }
+    .navlinks { display:flex; align-items:center; gap:25px; color:#60697d; font-size:.9rem; }
+    .navlinks a:hover { color:var(--blue); }
+    .nav-cta { background:var(--ink); color:white; border-radius:12px; padding:10px 15px; font-size:.86rem; font-weight:700; }
+    .menu { display:none; border:1px solid rgba(35,46,74,.12); background:rgba(255,255,255,.7); border-radius:11px; padding:8px 12px; }
+    .hero { min-height:690px; display:grid; grid-template-columns:1.1fr .9fr; align-items:center; gap:40px; padding-top:72px; padding-bottom:92px; }
+    .pill { display:inline-flex; align-items:center; gap:9px; border:1px solid rgba(255,255,255,.92); background:rgba(255,255,255,.52); backdrop-filter:blur(16px); padding:8px 13px; border-radius:999px; color:#59637b; font-size:.8rem; box-shadow:0 5px 22px rgba(53,67,110,.06); }
+    .dot { width:7px; height:7px; border-radius:50%; background:#3bc6a8; box-shadow:0 0 0 4px rgba(59,198,168,.14); }
+    h1 { font-size:clamp(3.5rem, 8vw, 6.4rem); letter-spacing:-.085em; line-height:.98; margin:25px 0; font-weight:850; }
+    .gradient { background:linear-gradient(105deg,#5578f5 4%,#8b7df4 48%,#34bfb7 95%); color:transparent; background-clip:text; -webkit-background-clip:text; }
+    .lead { max-width:610px; color:var(--muted); font-size:clamp(1rem,2vw,1.16rem); }
+    .actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:29px; }
+    .btn { display:inline-flex; align-items:center; justify-content:center; gap:9px; padding:13px 18px; border:1px solid rgba(45,55,90,.12); border-radius:14px; background:rgba(255,255,255,.56); backdrop-filter:blur(14px); font-weight:750; font-size:.91rem; transition:transform .2s, box-shadow .2s; }
+    .btn:hover { transform:translateY(-3px); box-shadow:0 12px 28px rgba(65,86,150,.13); }
+    .btn.primary { color:#fff; background:linear-gradient(120deg,#5578f5,#776af1); border-color:transparent; box-shadow:0 10px 25px rgba(85,120,245,.24); }
+    .hero-visual { min-height:440px; position:relative; display:grid; place-items:center; }
+    .glass-orb { position:relative; width:min(340px,70vw); aspect-ratio:1; border-radius:38% 62% 56% 44% / 43% 42% 58% 57%; background:linear-gradient(135deg,rgba(255,255,255,.95),rgba(255,255,255,.12)), radial-gradient(circle at 28% 25%,#c6fff4,#8cb4ff 44%,#9a8cff 75%); box-shadow:inset -18px -20px 45px rgba(78,96,170,.18), inset 14px 16px 35px rgba(255,255,255,.95), 0 35px 90px rgba(97,120,213,.25); animation:morph 10s ease-in-out infinite; }
+    .glass-orb::before { content:""; position:absolute; inset:10%; border:1px solid rgba(255,255,255,.9); border-radius:inherit; transform:rotate(24deg) scale(1.18,.78); }
+    .glass-orb::after { content:""; position:absolute; inset:-10%; border:1px solid rgba(255,255,255,.72); border-radius:50%; transform:rotate(-32deg) scale(1.3,.42); }
+    .float-card { position:absolute; z-index:2; padding:15px 17px; border:1px solid rgba(255,255,255,.85); background:rgba(255,255,255,.58); backdrop-filter:blur(22px) saturate(1.4); border-radius:18px; box-shadow:var(--shadow); }
+    .float-card strong { display:block; font-size:.98rem; }
+    .float-card span { color:var(--muted); font-size:.78rem; }
+    .float-card.one { top:47px; left:0; }
+    .float-card.two { right:-4px; bottom:57px; }
+    .float-icon { display:inline-grid; place-items:center; width:28px; height:28px; border-radius:9px; background:rgba(85,120,245,.12); color:var(--blue); margin-right:7px; }
+    @keyframes morph { 0%,100% { border-radius:38% 62% 56% 44% / 43% 42% 58% 57%; transform:rotate(-5deg) translateY(0); } 50% { border-radius:58% 42% 39% 61% / 53% 60% 40% 47%; transform:rotate(5deg) translateY(-10px); } }
+    section { padding:70px 0; }
+    .section-head { display:flex; justify-content:space-between; align-items:end; gap:24px; margin-bottom:28px; }
+    .eyebrow { color:var(--blue); font-size:.75rem; font-weight:850; text-transform:uppercase; letter-spacing:.16em; }
+    h2 { font-size:clamp(2rem,4.5vw,3.2rem); letter-spacing:-.065em; line-height:1.08; margin:8px 0 0; }
+    .section-desc { color:var(--muted); max-width:460px; margin:0; }
+    .project-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+    .glass-card { border:1px solid rgba(255,255,255,.88); border-radius:var(--radius); background:linear-gradient(145deg,rgba(255,255,255,.76),rgba(255,255,255,.42)); backdrop-filter:blur(22px) saturate(1.25); box-shadow:0 15px 50px rgba(57,72,119,.07); padding:23px; transition:transform .25s, box-shadow .25s; }
+    .glass-card:hover { transform:translateY(-5px); box-shadow:0 22px 55px rgba(57,72,119,.13); }
+    .project-head { display:flex; justify-content:space-between; align-items:center; margin-bottom:24px; }
+    .iconbox { width:47px; height:47px; border-radius:15px; display:grid; place-items:center; font-size:1.25rem; color:#536ff0; background:linear-gradient(135deg,rgba(85,120,245,.15),rgba(99,217,208,.22)); border:1px solid rgba(255,255,255,.9); }
+    .index { font-size:.77rem; color:#9ba2b2; letter-spacing:.12em; }
+    .glass-card h3 { margin:0 0 8px; font-size:1.12rem; letter-spacing:-.02em; }
+    .glass-card p { margin:0; color:var(--muted); font-size:.91rem; }
+    .tags { display:flex; flex-wrap:wrap; gap:7px; margin-top:17px; }
+    .tag { font-size:.73rem; padding:5px 9px; border-radius:8px; background:rgba(255,255,255,.65); border:1px solid rgba(80,96,140,.10); color:#626c83; }
+    .project-link { display:inline-block; margin-top:19px; color:#526ff0; font-weight:750; font-size:.87rem; }
+    .about-grid { display:grid; grid-template-columns:.85fr 1.15fr; gap:18px; }
+    .about-feature { min-height:330px; display:flex; flex-direction:column; justify-content:space-between; background:linear-gradient(145deg,rgba(255,255,255,.82),rgba(225,231,255,.52)); }
+    .quote-mark { font-size:4rem; line-height:1; color:rgba(85,120,245,.38); font-weight:900; }
+    .about-feature h3 { font-size:1.7rem; line-height:1.2; letter-spacing:-.045em; margin:18px 0; }
+    .about-feature p, .about-copy p { color:var(--muted); }
+    .about-copy { padding:10px 6px; }
+    .mini-stats { display:grid; grid-template-columns:repeat(2,1fr); gap:12px; margin-top:24px; }
+    .stat { border:1px solid rgba(255,255,255,.9); border-radius:17px; background:rgba(255,255,255,.53); padding:16px; }
+    .stat strong { display:block; font-size:1.3rem; color:#5578f5; }
+    .stat span { font-size:.8rem; color:var(--muted); }
+    .skill-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; }
+    .skill { padding:18px; display:flex; align-items:center; gap:12px; border:1px solid rgba(255,255,255,.86); border-radius:17px; background:rgba(255,255,255,.5); backdrop-filter:blur(16px); color:#515b72; font-size:.88rem; }
+    .skill b { color:#5876ee; font-size:1.1rem; }
+    .contact-card { padding:clamp(26px,5vw,52px); border:1px solid rgba(255,255,255,.9); border-radius:30px; background:linear-gradient(120deg,rgba(255,255,255,.82),rgba(226,231,255,.58)); box-shadow:var(--shadow); display:flex; align-items:center; justify-content:space-between; gap:25px; }
+    .contact-card p { color:var(--muted); max-width:560px; }
+    footer { margin-top:65px; padding:25px 0 38px; border-top:1px solid rgba(95,110,150,.14); color:#7c8497; display:flex; justify-content:space-between; gap:20px; font-size:.82rem; }
+    .reveal { opacity:0; transform:translateY(18px); transition:opacity .65s ease,transform .65s ease; }
+    .reveal.visible { opacity:1; transform:translateY(0); }
+    @media (prefers-reduced-motion:reduce) { *,*::before,*::after { animation:none!important; transition:none!important; scroll-behavior:auto!important; } .reveal { opacity:1; transform:none; } }
+    @media(max-width:850px) {
+      .hero { grid-template-columns:1fr; padding-top:65px; gap:10px; }
+      .hero-visual { min-height:360px; }
+      .glass-orb { width:260px; }
+      .project-grid { grid-template-columns:1fr; }
+      .about-grid { grid-template-columns:1fr; }
+      .skill-grid { grid-template-columns:repeat(2,1fr); }
+      .section-head { display:block; }
+      .section-desc { margin-top:13px; }
+      .contact-card { display:block; }
+      .contact-card .btn { margin-top:8px; }
+      .navlinks { display:none; position:absolute; top:74px; left:20px; right:20px; flex-direction:column; align-items:stretch; gap:0; padding:10px; background:rgba(250,251,255,.92); border:1px solid white; border-radius:17px; box-shadow:var(--shadow); backdrop-filter:blur(20px); }
+      .navlinks.open { display:flex; }
+      .navlinks a { padding:11px 12px; }
+      .nav-cta { text-align:center; margin-top:4px; }
+      .menu { display:block; }
+    }
+    @media(max-width:480px) {
+      .wrap { width:min(var(--max),calc(100% - 28px)); }
+      .hero { min-height:auto; padding-top:54px; padding-bottom:55px; }
+      h1 { font-size:clamp(3.1rem,17vw,4.4rem); }
+      .hero-visual { min-height:300px; }
+      .glass-orb { width:210px; }
+      .float-card.one { top:22px; left:-2px; }
+      .float-card.two { right:-3px; bottom:24px; }
+      .float-card { padding:11px 12px; }
+      .skill-grid { grid-template-columns:1fr 1fr; }
+      .skill { padding:13px 11px; gap:8px; font-size:.8rem; }
+      footer { flex-direction:column; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap nav-shell">
+    <nav class="nav" aria-label="Navigasi utama">
+      <a class="brand" href="#home" aria-label="YAN beranda">YAN<span>.</span></a>
+      <div class="navlinks" id="navlinks">
+        <a href="#proyek">Proyek</a>
+        <a href="#tentang">Tentang</a>
+        <a href="#keahlian">Keahlian</a>
+        <a href="#kontak">Kontak</a>
+        <a class="nav-cta" href="https://github.com/IniGwYaN" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+      </div>
+      <button class="menu" id="menu" aria-expanded="false" aria-controls="navlinks">☰ Menu</button>
+    </nav>
+  </div>
+
+  <main>
+    <section class="wrap hero" id="home">
+      <div class="reveal">
+        <div class="pill"><span class="dot"></span> Terus belajar · Terus membangun</div>
+        <h1>Halo, aku<br><span class="gradient">YAN.</span></h1>
+        <p class="lead">Tech enthusiast yang suka mengeksplorasi Android, merancang pengalaman digital, dan mengubah ide menjadi proyek nyata. Selalu penasaran dengan apa yang bisa dibuat berikutnya.</p>
+        <div class="actions">
+          <a class="btn primary" href="#proyek">Jelajahi proyek <span>↗</span></a>
+          <a class="btn" href="https://github.com/IniGwYaN" target="_blank" rel="noopener noreferrer">Lihat GitHub <span>↗</span></a>
+        </div>
+      </div>
+      <div class="hero-visual reveal" aria-label="Ilustrasi abstrak glassmorphism">
+        <div class="glass-orb"></div>
+        <div class="float-card one"><strong><span class="float-icon">⌘</span>Tech explorer</strong><span>Android · Open source</span></div>
+        <div class="float-card two"><strong>Build. Learn. Repeat.</strong><span>Setiap proyek adalah proses.</span></div>
+      </div>
+    </section>
+
+    <section class="wrap" id="proyek">
+      <div class="section-head reveal">
+        <div><div class="eyebrow">01 / Karya pilihan</div><h2>Hal yang sedang<br>aku bangun.</h2></div>
+        <p class="section-desc">Dari pengembangan aplikasi hingga eksperimen sistem Android, ini beberapa area yang mewakili rasa ingin tahuku terhadap teknologi.</p>
+      </div>
+      <div class="project-grid">
+        <article class="glass-card reveal">
+          <div class="project-head"><div class="iconbox">▱</div><span class="index">PROYEK / 01</span></div>
+          <h3>StackRecentAOSP</h3>
+          <p>Eksperimen aplikasi pengganti recent apps AOSP dengan pendekatan UI modern dan pengalaman multitasking yang lebih menarik.</p>
+          <div class="tags"><span class="tag">Android</span><span class="tag">AOSP</span><span class="tag">UI/UX</span></div>
+          <a class="project-link" href="https://github.com/IniGwYaN/StackRecentAOSP" target="_blank" rel="noopener noreferrer">Lihat repositori ↗</a>
+        </article>
+        <article class="glass-card reveal">
+          <div class="project-head"><div class="iconbox">⌘</div><span class="index">PROYEK / 02</span></div>
+          <h3>Android Lab</h3>
+          <p>Eksplorasi custom ROM, konfigurasi sistem, kernel, dan tuning performa untuk memahami Android lebih dalam.</p>
+          <div class="tags"><span class="tag">Custom ROM</span><span class="tag">System tuning</span><span class="tag">Debugging</span></div>
+        </article>
+        <article class="glass-card reveal">
+          <div class="project-head"><div class="iconbox">✳</div><span class="index">PROYEK / 03</span></div>
+          <h3>UI & Web Experiments</h3>
+          <p>Mencoba komposisi visual yang bersih, efek glassmorphism, dan antarmuka responsif untuk pengalaman digital yang terasa premium.</p>
+          <div class="tags"><span class="tag">Web design</span><span class="tag">Prototyping</span><span class="tag">Visual</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="wrap" id="tentang">
+      <div class="section-head reveal">
+        <div><div class="eyebrow">02 / Tentang aku</div><h2>Teknologi bukan cuma<br>dipakai, tapi dipahami.</h2></div>
+      </div>
+      <div class="about-grid">
+        <div class="glass-card about-feature reveal">
+          <div class="quote-mark">“</div>
+          <div><h3>Rasa penasaran adalah awal dari setiap eksperimen.</h3><p>Aku suka mencari tahu bagaimana sesuatu bekerja, mencoba pendekatan baru, lalu belajar dari hasilnya.</p></div>
+        </div>
+        <div class="about-copy reveal">
+          <div class="eyebrow">Perjalanan digital</div>
+          <p>Aku YAN, seorang penggemar teknologi yang senang mengutak-atik Android dan mengembangkan proyek digital. Ketertarikanku tumbuh dari mencoba custom ROM, memahami perilaku sistem, hingga membangun aplikasi sendiri.</p>
+          <p>Sekarang aku terus mengembangkan kemampuan di area Android, UI/UX, dan pengembangan software. Aku percaya proyek yang baik lahir dari proses mencoba, mengevaluasi, dan memperbaiki.</p>
+          <div class="mini-stats">
+            <div class="stat"><strong>Open source</strong><span>Berbagi proses dan karya</span></div>
+            <div class="stat"><strong>On progress</strong><span>Selalu ada hal baru dipelajari</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap" id="keahlian">
+      <div class="section-head reveal">
+        <div><div class="eyebrow">03 / Area eksplorasi</div><h2>Hal yang aku tekuni.</h2></div>
+        <p class="section-desc">Kemampuan dan minat yang terus dikembangkan lewat praktik, eksperimen, dan proyek.</p>
+      </div>
+      <div class="skill-grid reveal">
+        <div class="skill"><b>◈</b> Android customization</div>
+        <div class="skill"><b>⌘</b> AOSP & custom ROM</div>
+        <div class="skill"><b>⌥</b> Git & GitHub</div>
+        <div class="skill"><b>✳</b> Eksplorasi UI/UX</div>
+        <div class="skill"><b>⌕</b> Debugging</div>
+        <div class="skill"><b>⌁</b> Web fundamentals</div>
+        <div class="skill"><b>◉</b> Optimasi sistem</div>
+        <div class="skill"><b>↗</b> Belajar lewat proyek</div>
+      </div>
+    </section>
+
+    <section class="wrap" id="kontak">
+      <div class="contact-card reveal">
+        <div>
+          <div class="eyebrow">04 / Kontak</div>
+          <h2>Yuk, mulai sesuatu yang menarik.</h2>
+          <p>Punya ide, masukan, atau tertarik berdiskusi soal teknologi? Aku terbuka untuk bertukar pikiran dan berkolaborasi.</p>
+        </div>
+        <a class="btn primary" href="https://github.com/IniGwYaN" target="_blank" rel="noopener noreferrer">Temui aku di GitHub ↗</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap">
+    <span>© <span id="year"></span> YAN. Dibuat dengan rasa penasaran.</span>
+    <a href="#home">Kembali ke atas ↑</a>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const menu = document.getElementById('menu');
+    const nav = document.getElementById('navlinks');
+    menu.addEventListener('click', () => {
+      const open = nav.classList.toggle('open');
+      menu.setAttribute('aria-expanded', String(open));
+    });
+    nav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      nav.classList.remove('open');
+      menu.setAttribute('aria-expanded', 'false');
+    }));
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    } else {
+      document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+    }
+  </script>
+</body>
+</html>
