@@ -184,10 +184,8 @@
     .intro-orbit::after { inset: 22%; border-color: rgba(255,255,255,.045); }
     .intro-sweep { position: absolute; top: 50%; left: 50%; width: min(84vw,900px); height: 1px; transform: translate(-50%,-50%) rotate(-24deg); pointer-events: none; overflow: hidden; }
     .intro-sweep::after { content: ""; display: block; height: 100%; width: 32%; background: linear-gradient(90deg,transparent,rgba(255,255,255,.25),transparent); animation: sweepLine 4.2s .4s ease-in-out infinite; }
-    .intro-start { position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 22px; min-width: 174px; margin-top: 31px; padding: 13px 17px 13px 20px; border: 1px solid rgba(255,255,255,.26); border-radius: 3px; background: rgba(255,255,255,.045); color: #f3f3f0; text-transform: uppercase; letter-spacing: .13em; font-size: .73rem; font-weight: 750; box-shadow: inset 0 1px 0 rgba(255,255,255,.09),0 12px 38px rgba(0,0,0,.16); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); opacity: 0; animation: introRise .8s .6s cubic-bezier(.2,.7,.2,1) forwards; transition: background .25s,border-color .25s,transform .25s,box-shadow .25s; }
-    .intro-start span { font-size: 1rem; font-weight: 400; transition: transform .25s; }
+    .intro-start { position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 0; min-width: 174px; margin-top: 31px; padding: 13px 24px; border: 1px solid rgba(255,255,255,.26); border-radius: 3px; background: rgba(255,255,255,.045); color: #f3f3f0; text-transform: uppercase; letter-spacing: .13em; font-size: .73rem; font-weight: 750; box-shadow: inset 0 1px 0 rgba(255,255,255,.09),0 12px 38px rgba(0,0,0,.16); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); opacity: 0; animation: introRise .8s .6s cubic-bezier(.2,.7,.2,1) forwards; transition: background .25s,border-color .25s,transform .25s,box-shadow .25s; }
     .intro-start:hover { background: rgba(255,255,255,.12); border-color: rgba(255,255,255,.48); transform: translateY(-2px); box-shadow: inset 0 1px 0 rgba(255,255,255,.13),0 16px 44px rgba(0,0,0,.25); }
-    .intro-start:hover span { transform: translateX(3px); }
     .intro-start:active { transform: scale(.98); }
     .intro-foot .foot-mark { display: inline-flex; align-items: center; gap: 8px; }
     .foot-mark::before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: #bdbdb7; box-shadow: 0 0 0 4px rgba(255,255,255,.045); }
@@ -377,6 +375,8 @@
     .intro-composition { transform:translate3d(var(--intro-parallax-x,0px),var(--intro-parallax-y,0px),0); transition:transform .22s ease-out; }
     .intro-index { animation: introRise .85s .12s cubic-bezier(.16,1,.3,1) both; }
     .intro-wordmark {
+      /* Optical correction: the Y's left diagonal makes the wordmark feel right-heavy. */
+      left:clamp(-8px,-1vw,-4px);
       color:transparent; background:linear-gradient(115deg,#f4f4f1 8%,#a2a29d 32%,#fbfbf8 49%,#7f7f7a 69%,#eeeeea 88%);
       background-size:230% 100%; background-position:0% 50%; -webkit-background-clip:text; background-clip:text;
       text-shadow:0 12px 60px rgba(255,255,255,.045); animation:introWordmark .95s .16s cubic-bezier(.16,.8,.2,1) forwards, wordmarkPolish 6.5s 1.4s ease-in-out infinite;
@@ -388,8 +388,6 @@
     .intro-start { isolation:isolate; overflow:hidden; border-color:rgba(255,255,255,.31); box-shadow:inset 0 1px 0 rgba(255,255,255,.13),0 15px 45px rgba(0,0,0,.2); animation:introRise .9s .59s cubic-bezier(.16,1,.3,1) both, startBreathe 4s 1.6s ease-in-out infinite; }
     .intro-start::before { content:""; position:absolute; inset:0; z-index:-1; transform:translateX(-120%); background:linear-gradient(105deg,transparent 25%,rgba(255,255,255,.16) 50%,transparent 72%); animation:buttonShine 4.8s 1.4s ease-in-out infinite; }
     .intro-start::after { content:""; position:absolute; inset:3px; border:1px solid rgba(255,255,255,.065); pointer-events:none; }
-    .intro-start span { transition:transform .28s cubic-bezier(.2,.8,.2,1); }
-    .intro-start:hover span { transform:translate(4px,-2px); }
     .intro-screen.launching .intro-orbit { animation: launchOrbit .8s cubic-bezier(.16,1,.3,1) forwards; }
     .intro-screen.launching .intro-ring--wide { animation:launchRing .85s cubic-bezier(.16,1,.3,1) forwards; }
     .intro-screen.launching .intro-wordmark { animation:launchWord .46s cubic-bezier(.4,0,.2,1) forwards; }
@@ -547,13 +545,27 @@
       min-height: 0;
       padding: max(76px, 10dvh) 18px;
     }
+    /* Optical centering: compensate slightly for the heavy right side of the YAN wordmark.
+       Keep the nudge tied to viewport width so Chrome and other mobile browsers match. */
     .intro-composition {
       width: min(100%, 930px);
-      margin: 0 auto;
+      margin-inline: auto;
       text-align: center;
-      transform: translate3d(var(--intro-parallax-x, 0px), calc(var(--intro-parallax-y, 0px) - 1.2dvh), 0);
+      /* Keep the whole group centered; only a nearly imperceptible optical nudge remains. */
+      transform: translate3d(
+        calc(var(--intro-parallax-x, 0px) - clamp(1px, .4vw, 3px)),
+        calc(var(--intro-parallax-y, 0px) - 1.2dvh),
+        0
+      );
     }
-    .intro-wordmark,
+    .intro-wordmark {
+      display: block;
+      width: 100%;
+      max-width: none;
+      margin-inline: auto;
+      text-align: center;
+      text-indent: 0;
+    }
     .intro-wordmark::after {
       width: 100%;
       text-align: center;
@@ -566,6 +578,12 @@
       white-space: nowrap;
       line-height: inherit;
       letter-spacing: inherit;
+    }
+    .intro-start {
+      justify-content: center;
+      gap: 0;
+      padding-inline: 24px;
+      text-align: center;
     }
     @media (max-height: 700px) and (orientation: landscape) {
       .intro-head { top: max(14px, env(safe-area-inset-top)); }
@@ -595,7 +613,7 @@
         <h1 class="intro-wordmark" aria-label="YAN">YAN</h1>
         <div class="intro-subtitle">Android · Open source · Interface</div>
         <p class="intro-description">Ruang kecil untuk ide, eksperimen, dan hal-hal yang sedang kubangun.</p>
-        <button class="intro-start" id="start-button" type="button">Start exploring <span aria-hidden="true">↗</span></button>
+        <button class="intro-start" id="start-button" type="button">Start exploring</button>
       </div>
     </div>
     <footer class="intro-foot"><span class="foot-mark">Curiosity in progress</span><span>Scroll less. Explore more.</span></footer>
