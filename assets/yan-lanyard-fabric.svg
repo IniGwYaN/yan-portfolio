@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="256" height="1024" viewBox="0 0 256 1024">
-<defs><linearGradient id="f" x2="1"><stop stop-color="#050b15"/><stop offset=".18" stop-color="#24344c"/><stop offset=".5" stop-color="#101d30"/><stop offset=".82" stop-color="#283b56"/><stop offset="1" stop-color="#050b15"/></linearGradient><pattern id="weave" width="8" height="8" patternUnits="userSpaceOnUse"><path d="M0 1H8M0 5H8" stroke="#c2d4ec" stroke-opacity=".22" stroke-width="1"/><path d="M1 0V8M5 0V8" stroke="#000" stroke-opacity=".48" stroke-width="1"/></pattern></defs>
-<rect width="256" height="1024" fill="url(#f)"/><rect width="256" height="1024" fill="url(#weave)"/>
-<path d="M16 0V1024M240 0V1024" stroke="#a9bdd9" stroke-opacity=".45" stroke-width="3"/><path d="M24 0V1024M232 0V1024" stroke="#02060c" stroke-opacity=".8" stroke-width="5"/>
-<g fill="#e1e9f5" fill-opacity=".88" font-family="Arial,sans-serif" font-size="19" font-weight="800" letter-spacing="3" text-anchor="middle"><text x="128" y="98">YAN · DIGITAL CREATOR</text><text x="128" y="350">YAN · DIGITAL CREATOR</text><text x="128" y="602">YAN · DIGITAL CREATOR</text><text x="128" y="854">YAN · DIGITAL CREATOR</text></g>
-<g stroke="#d5e3f5" stroke-opacity=".55" stroke-width="2"><path d="M54 122H202M54 374H202M54 626H202M54 878H202"/></g>
-</svg>
