@@ -380,11 +380,74 @@ h1,h2,h3,.home-copy h1,.section-head h2,.contact-title,.message-panel h2,.id-pri
 @media(min-width:768px) and (max-width:980px){.nav-wrap{width:max-content!important;max-width:calc(100vw - 30px)!important}.nav{min-height:56px!important}.nav button{min-height:38px!important;height:38px!important;padding-inline:12px!important;font-size:.73rem!important}.nav-brand span{display:none}}
 </style>
 
+
+<style id="yan-revision8-polish">
+/* Actual Alfari GlassSurface styles and a properly isolated glass lens behind YAN's nav controls. */
+html{--lightningcss-light:;--lightningcss-dark:initial;color-scheme:dark}
+.glass-surface{justify-content:center;align-items:center;transition:opacity .26s ease-out;display:flex;position:relative;overflow:hidden}.glass-surface__filter{pointer-events:none;opacity:0;z-index:-1;width:100%;height:100%;position:absolute;inset:0}.glass-surface__content{border-radius:inherit;z-index:1;justify-content:center;align-items:center;width:100%;height:100%;padding:.5rem;display:flex;position:relative}.glass-surface--svg{background:var(--lightningcss-light,hsl(0 0% 100%/var(--glass-frost,0)))var(--lightningcss-dark,hsl(0 0% 0%/var(--glass-frost,0)));-webkit-backdrop-filter:var(--filter-id,url(#glass-filter)) saturate(var(--glass-saturation,1));backdrop-filter:var(--filter-id,url(#glass-filter)) saturate(var(--glass-saturation,1));box-shadow:inset 0 0 2px 1px var(--lightningcss-light,oklch(0% none none/.15))var(--lightningcss-dark,oklch(100% 5.96046e-8 none/.35)),inset 0 0 10px 4px var(--lightningcss-light,oklch(0% none none/.1))var(--lightningcss-dark,oklch(100% 5.96046e-8 none/.15)),0 4px 16px #11111a0d,0 8px 24px #11111a0d,0 16px 56px #11111a0d,inset 0 4px 16px #11111a0d,inset 0 8px 24px #11111a0d,inset 0 16px 56px #11111a0d}.glass-surface--webgl{box-shadow:0 4px 16px #11111a0d,0 8px 24px #11111a0d,0 16px 56px #11111a0d}.glass-surface__canvas,.glass-surface__frame{border-radius:inherit;pointer-events:none;width:100%;height:100%;position:absolute;inset:0}.glass-surface__frame{background:var(--lightningcss-light,hsl(0 0% 100%/var(--glass-frost,0)))var(--lightningcss-dark,hsl(0 0% 0%/var(--glass-frost,0)));box-shadow:inset 0 0 2px 1px var(--lightningcss-light,oklch(0% none none/.15))var(--lightningcss-dark,oklch(100% 5.96046e-8 none/.35)),inset 0 0 10px 4px var(--lightningcss-light,oklch(0% none none/.1))var(--lightningcss-dark,oklch(100% 5.96046e-8 none/.15)),inset 0 4px 16px #11111a0d,inset 0 8px 24px #11111a0d,inset 0 16px 56px #11111a0d}.glass-surface--fallback{background:var(--lightningcss-light,hsl(0 0% 100%/calc(.12 + var(--glass-frost,0) * .5)))var(--lightningcss-dark,hsl(0 0% 100%/calc(.04 + var(--glass-frost,0) * .3)));-webkit-backdrop-filter:blur(12px) saturate(calc(var(--glass-saturation,1) * 1.4)) brightness(1.04);backdrop-filter:blur(12px) saturate(calc(var(--glass-saturation,1) * 1.4)) brightness(1.04);box-shadow:inset 0 1px var(--lightningcss-light,#ffffffd9)var(--lightningcss-dark,#ffffff4d),inset 0 -1px var(--lightningcss-light,#ffffff59)var(--lightningcss-dark,#ffffff14),inset 0 0 2px 1px var(--lightningcss-light,oklch(0% none none/.12))var(--lightningcss-dark,oklch(100% 5.96046e-8 none/.28)),inset 0 0 12px 3px var(--lightningcss-light,oklch(100% 5.96046e-8 none/.28))var(--lightningcss-dark,oklch(100% 5.96046e-8 none/.1)),0 4px 16px #11111a0f,0 8px 24px #11111a0f,0 16px 56px #11111a0f}.glass-surface__sheen,.glass-surface__rim{border-radius:inherit;pointer-events:none;position:absolute;inset:0}.glass-surface__sheen{background:linear-gradient(135deg,var(--lightningcss-light,#ffffff6b)var(--lightningcss-dark,#ffffff24) 0%,#0000 42% 64%,var(--lightningcss-light,#ffffff2e)var(--lightningcss-dark,#ffffff0d) 100%)}.glass-surface__rim{-webkit-mask-composite:xor;background:linear-gradient(150deg,var(--lightningcss-light,#ffffffb3)var(--lightningcss-dark,#ffffff57),var(--lightningcss-light,#ffffff1a)var(--lightningcss-dark,#ffffff08) 45%,var(--lightningcss-light,#ffffff14)var(--lightningcss-dark,#ffffff05) 60%,var(--lightningcss-light,#ffffff6b)var(--lightningcss-dark,#ffffff2e));padding:3px;-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor,source-over;mask:linear-gradient(#000 0 0) content-box exclude,linear-gradient(#000 0 0)}.glass-surface__line,.glass-surface__glow{pointer-events:none;position:absolute;inset:0;-webkit-mask-size:100% 100%;mask-size:100% 100%}.glass-surface--svg .glass-surface__line,.glass-surface--webgl .glass-surface__line{background:var(--lightningcss-light,oklch(0% none none/.15))var(--lightningcss-dark,oklch(100% 5.96046e-8 none/.35))}.glass-surface--svg .glass-surface__glow,.glass-surface--webgl .glass-surface__glow{background:var(--lightningcss-light,oklch(0% none none/.1))var(--lightningcss-dark,oklch(100% 5.96046e-8 none/.15))}.glass-surface--fallback .glass-surface__line{background:var(--lightningcss-light,oklch(0% none none/.12))var(--lightningcss-dark,oklch(100% 5.96046e-8 none/.28))}.glass-surface--fallback .glass-surface__glow{background:var(--lightningcss-light,oklch(100% 5.96046e-8 none/.28))var(--lightningcss-dark,oklch(100% 5.96046e-8 none/.1))}@supports not ((-webkit-backdrop-filter:blur(1px)) or (backdrop-filter:blur(1px))){.glass-surface--fallback{background:var(--lightningcss-light,#ffffffb8)var(--lightningcss-dark,#1f1f1fb8)}}.glass-surface:focus-visible{outline-offset:2px;outline:2px solid var(--lightningcss-light,#007aff)var(--lightningcss-dark,#0a84ff)}
+.nav-wrap{position:fixed!important;top:12px!important;z-index:120!important;filter:drop-shadow(0 12px 22px rgba(0,0,0,.35))}
+.site{padding-top:100px!important}
+.view{scroll-margin-top:116px!important}
+.nav{position:relative!important;isolation:isolate!important;overflow:hidden!important;background:transparent!important;border-color:transparent!important;box-shadow:none!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important}
+.nav:before,.nav:after{content:none!important;display:none!important}
+.nav-glass-root{position:absolute!important;inset:0!important;z-index:0!important;width:100%!important;height:100%!important;border-radius:inherit!important;pointer-events:none!important;overflow:hidden!important}
+.nav-glass-root>.glass-surface{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;border-radius:inherit!important;pointer-events:none!important}
+.nav-glass-root .glass-surface__content{display:none!important}
+.nav-glass-root .glass-surface__filter,.nav-glass-root .glass-surface__canvas,.nav-glass-root .glass-surface__frame,.nav-glass-root .glass-surface__sheen,.nav-glass-root .glass-surface__rim,.nav-glass-root .glass-surface__line,.nav-glass-root .glass-surface__glow{pointer-events:none!important}
+.nav>*:not(.nav-glass-root){z-index:2!important}
+.mobile-menu{position:absolute!important;isolation:isolate!important;overflow:hidden!important;background:transparent!important;border-color:transparent!important;box-shadow:none!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important}
+.mobile-menu:before,.mobile-menu:after{content:none!important;display:none!important}
+.mobile-menu-glass-root{position:absolute!important;inset:0!important;z-index:0!important;width:100%!important;height:100%!important;border-radius:20px!important;pointer-events:none!important;overflow:hidden!important}
+.mobile-menu-glass-root>.glass-surface{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;border-radius:inherit!important;pointer-events:none!important}
+.mobile-menu-glass-root .glass-surface__content{display:none!important}
+.mobile-menu>*:not(.mobile-menu-glass-root){position:relative!important;z-index:2!important}
+.nav button[aria-current=page]{color:#fff!important;background:linear-gradient(135deg,rgba(255,255,255,.18),rgba(59,130,246,.12))!important;border-color:rgba(255,255,255,.15)!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.18),0 0 24px rgba(59,130,246,.2)!important}
+.nav button:hover{color:#fff!important;background:rgba(255,255,255,.1)!important}
+@media(max-width:700px){
+  .site{padding-top:82px!important}
+  .nav-wrap{top:10px!important}
+  .view{scroll-margin-top:96px!important}
+  .nav-brand{background:transparent!important;border-color:transparent!important;box-shadow:none!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important}
+}
+@media(prefers-reduced-motion:reduce){.nav-glass-root .glass-surface{transition:none!important}}
+
+/* Artist picks: compact chorus excerpts, no playlist roulette and no autoplay. */
+.music-section{margin:16px 0 58px;padding:24px;border:1px solid rgba(137,177,235,.16);border-radius:18px;background:linear-gradient(145deg,rgba(9,22,43,.82),rgba(3,10,22,.86));box-shadow:inset 0 1px 0 rgba(255,255,255,.045)}
+.music-heading{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;margin-bottom:18px}
+.music-heading h2{margin:6px 0 2px;font:700 clamp(1.6rem,3.4vw,2.3rem)/1.1 var(--font-display);letter-spacing:-.045em;color:#edf4ff}
+.music-heading p{margin:6px 0 0;color:#8294af;font-size:.82rem}
+.music-note,.music-kicker{font:700 .61rem/1.4 var(--font-mono);letter-spacing:.13em;color:#79aef2}
+.music-note{padding:8px 10px;border:1px solid rgba(112,160,229,.18);border-radius:999px;white-space:nowrap}
+.music-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.music-card{min-width:0;padding:15px;border:1px solid rgba(139,177,231,.14);border-radius:13px;background:rgba(3,12,26,.72)}
+.music-card-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:12px}
+.music-card h3{margin:5px 0 3px;color:#e2ebf9;font-size:1.2rem}
+.music-card-head p{margin:0;color:#7f90aa;font-size:.73rem}
+.music-card-head>a,.music-open{flex:none;color:#8bb8f2;font-size:.68rem;padding:6px 8px;border:1px solid rgba(104,158,232,.18);border-radius:7px}
+.music-track-list{display:grid;grid-template-columns:1fr;gap:13px}
+.music-track{min-width:0;padding:10px;border:1px solid rgba(139,177,231,.1);border-radius:11px;background:rgba(7,16,31,.72)}
+.music-track-title{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:8px}
+.music-track-title strong{color:#dfeaff;font-size:.84rem;font-weight:700}
+.music-track-title span{color:#7f94b3;font:500 .61rem/1.4 var(--font-mono);text-align:right}
+.music-track iframe{display:block;width:100%;height:210px;border:0;border-radius:8px;background:#0b1422}
+.music-open{display:inline-flex;margin-top:8px;padding:5px 7px;font-size:.62rem}
+@media(max-width:700px){
+ .music-section{padding:17px;margin:8px 0 36px}
+ .music-heading{align-items:flex-start;flex-direction:column;gap:9px}
+ .music-grid{grid-template-columns:1fr}
+ .music-card{padding:11px}
+ .music-track{padding:8px}
+ .music-track iframe{height:210px}
+}
+@media(max-width:370px){.music-track-title{align-items:flex-start;flex-direction:column;gap:2px}.music-track-title span{text-align:left}}
+</style>
+
 </head>
 <body>
 <div class="shooting-star"></div><div class="shooting-star s2"></div>
 <div class="nav-wrap">
   <nav class="nav" id="navlinks" aria-label="Main navigation">
+    <div class="nav-glass-root" id="nav-glass-root" aria-hidden="true"></div>
     <span class="nav-brand">YAN<span> / DIGITAL CREATOR</span></span>
     <div class="nav-links" id="nav-links">
       <button type="button" data-view="home" aria-current="page">Home</button>
@@ -403,6 +466,7 @@ h1,h2,h3,.home-copy h1,.section-head h2,.contact-title,.message-panel h2,.id-pri
     </div>
   </nav>
   <div class="mobile-menu" id="mobile-menu" hidden>
+    <div class="mobile-menu-glass-root" id="mobile-menu-glass-root" aria-hidden="true"></div>
     <button type="button" data-view="home" aria-current="page">Home <span>01</span></button>
     <button type="button" data-view="about">About <span>02</span></button>
     <button type="button" data-view="portfolio">Portfolio <span>03</span></button>
@@ -421,7 +485,7 @@ h1,h2,h3,.home-copy h1,.section-head h2,.contact-title,.message-panel h2,.id-pri
       <div class="social-mini"><a href="https://github.com/IniGwYaN" target="_blank" rel="noopener">GitHub ↗</a><a href="https://t.me/YaN_STAY_SAVE" target="_blank" rel="noopener">Telegram ↗</a><a href="https://t.me/PocoF1Goat" target="_blank" rel="noopener">Telegram Group ↗</a><a href="https://www.tiktok.com/@yan.royyan.01" target="_blank" rel="noopener">TikTok ↗</a></div>
     </div>
     <div class="hero-stage" aria-label="Kartu pengenal YAN yang dapat digerakkan">
-      <div id="yan-lanyard-mount" class="yan-lanyard-mount" aria-label="Kartu pengenal YAN 3D. Seret untuk mengayunkan, klik atau tap untuk membalik."></div><div class="drag-hint" aria-hidden="true">DRAG TO SWING · CLICK TO FLIP</div>
+      <div id="yan-lanyard-mount" class="yan-lanyard-mount" aria-label="Kartu identitas 3D YAN"></div>
     </div>
   </div>
 </section>
@@ -432,10 +496,22 @@ h1,h2,h3,.home-copy h1,.section-head h2,.contact-title,.message-panel h2,.id-pri
     <div class="about-copy"><div class="copy-title">Tech enthusiast. Android explorer.</div><p>Aku YAN, seseorang yang senang memahami teknologi lewat praktik langsung. Ketertarikanku banyak berawal dari <strong>Android, custom ROM, kernel, dan modifikasi sistem</strong>.</p><p>Aku menikmati proses membongkar cara kerja sesuatu, mencari penyebab masalah, mencoba pendekatan baru, lalu merapikannya sampai bisa digunakan. Dari eksperimen Android, aku mulai membangun aplikasi dan mengeksplorasi desain antarmuka.</p><p>Sekarang aku mengembangkan <strong>StackRecentAOSP</strong> dan terus belajar tentang software, AOSP, serta web development. Bagiku, proses belajar tidak berhenti saat sesuatu berhasil berjalan—justru dari situ eksperimen berikutnya dimulai.</p><div class="mio-note"><span class="mio-note-label">A little personal detail</span><strong>Literally love Mio Akiyama ♡</strong><span>Best girl, favorite bassist, forever.</span></div><div class="about-tags"><span>Android & AOSP</span><span>Custom ROM</span><span>System exploration</span><span>UI / UX</span><span>Open source</span></div></div>
   </div>
   <section class="music-section" aria-labelledby="music-title">
-    <div class="music-heading"><div><div class="eyebrow">Currently on repeat</div><h2 id="music-title">A little music<span> ♫</span></h2><p>Some sounds I keep coming back to.</p></div><span class="music-note">NOW PLAYING · YOUR PICK</span></div>
+    <div class="music-heading"><div><div class="eyebrow">Currently on repeat</div><h2 id="music-title">A little music<span> ♫</span></h2><p>Potongan chorus dan bagian paling ikonik — tekan play untuk mendengarkan.</p></div><span class="music-note">CHORUS / ICONIC CUTS</span></div>
     <div class="music-grid">
-      <article class="music-card"><div class="music-card-head"><div><span class="music-kicker">JAZZ POP · DREAMY</span><h3>Laufey</h3><p>Soft melodies for slow moments.</p></div><a href="https://open.spotify.com/playlist/37i9dQZF1DZ06evO4iRboc" target="_blank" rel="noopener">Open Spotify ↗</a></div><iframe title="Laufey on Spotify" src="https://open.spotify.com/embed/playlist/37i9dQZF1DZ06evO4iRboc?utm_source=generator&theme=0" width="100%" height="352" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen></iframe></article>
-      <article class="music-card"><div class="music-card-head"><div><span class="music-kicker">INDIE POP · BEDROOM POP</span><h3>beabadoobee</h3><p>Guitar-driven songs for every mood.</p></div><a href="https://open.spotify.com/playlist/1l71b0NJ2X15gEmkUShIOm" target="_blank" rel="noopener">Open Spotify ↗</a></div><iframe title="beabadoobee on Spotify" src="https://open.spotify.com/embed/playlist/1l71b0NJ2X15gEmkUShIOm?utm_source=generator&theme=0" width="100%" height="352" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen></iframe></article>
+      <article class="music-card">
+        <div class="music-card-head"><div><span class="music-kicker">JAZZ POP · DREAMY</span><h3>Laufey</h3><p>Melodi lembut, chorus yang gampang nempel.</p></div><a href="https://www.youtube.com/@Laufey" target="_blank" rel="noopener noreferrer">Official channel ↗</a></div>
+        <div class="music-track-list">
+          <div class="music-track"><div class="music-track-title"><strong>From The Start</strong><span>Chorus · 0:56–1:25</span></div><iframe title="Laufey — From The Start, chorus preview" src="https://www.youtube-nocookie.com/embed/lSD_L-xic9o?start=56&amp;end=85&amp;rel=0&amp;playsinline=1" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><a class="music-open" href="https://www.youtube.com/watch?v=lSD_L-xic9o" target="_blank" rel="noopener noreferrer">Open full video ↗</a></div>
+          <div class="music-track"><div class="music-track-title"><strong>Falling Behind</strong><span>Chorus · 0:56–1:12</span></div><iframe title="Laufey — Falling Behind, chorus preview" src="https://www.youtube-nocookie.com/embed/Ej8RhiSv2-4?start=56&amp;end=72&amp;rel=0&amp;playsinline=1" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><a class="music-open" href="https://www.youtube.com/watch?v=Ej8RhiSv2-4" target="_blank" rel="noopener noreferrer">Open full audio ↗</a></div>
+        </div>
+      </article>
+      <article class="music-card">
+        <div class="music-card-head"><div><span class="music-kicker">INDIE POP · BEDROOM POP</span><h3>beabadoobee</h3><p>Gitar manis dengan hook yang khas.</p></div><a href="https://www.youtube.com/@Beabadoobee" target="_blank" rel="noopener noreferrer">Official channel ↗</a></div>
+        <div class="music-track-list">
+          <div class="music-track"><div class="music-track-title"><strong>Glue Song</strong><span>Opening hook · 0:12–0:40</span></div><iframe title="beabadoobee — Glue Song, hook preview" src="https://www.youtube-nocookie.com/embed/y1cBhJLNNXU?start=12&amp;end=40&amp;rel=0&amp;playsinline=1" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><a class="music-open" href="https://www.youtube.com/watch?v=y1cBhJLNNXU" target="_blank" rel="noopener noreferrer">Open full video ↗</a></div>
+          <div class="music-track"><div class="music-track-title"><strong>the perfect pair</strong><span>Chorus · 0:32–0:58</span></div><iframe title="beabadoobee — the perfect pair, chorus preview" src="https://www.youtube-nocookie.com/embed/HwtEBQiuX-c?start=32&amp;end=58&amp;rel=0&amp;playsinline=1" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><a class="music-open" href="https://www.youtube.com/watch?v=HwtEBQiuX-c" target="_blank" rel="noopener noreferrer">Open full audio ↗</a></div>
+        </div>
+      </article>
     </div>
   </section>
 </section>
@@ -766,9 +842,32 @@ h1,h2,h3,.home-copy h1,.section-head h2,.contact-title,.message-panel h2,.id-pri
 })();
 </script>
 <script type="module">
-import { c as interop, s as reactModule, reactDOM } from './assets/alfari-react-runtime.js';
+import { c as interop, s as reactModule, reactDOM, GlassSurface } from './assets/alfari-react-runtime.js';
 import Lanyard from './assets/yan-lanyard.js';
 const React = interop(reactModule(), 1);
+function AlfariGlassLayer({ radius = 999, menu = false }) {
+  const [scrolled, setScrolled] = React.useState(() => window.scrollY > 40);
+  React.useEffect(() => {
+    const update = () => setScrolled(window.scrollY > 40);
+    window.addEventListener('scroll', update, { passive: true });
+    return () => window.removeEventListener('scroll', update);
+  }, []);
+  return React.createElement(GlassSurface, {
+    width: '100%', height: '100%', borderRadius: radius,
+    blur: 14, distortionScale: -70, displace: 0.25,
+    greenOffset: 4, blueOffset: 8,
+    backgroundOpacity: menu ? 0.08 : (scrolled ? 0.12 : 0.08),
+    className: menu ? 'yan-alfari-mobile-glass' : 'yan-alfari-glass'
+  });
+}
+const navGlassMount = document.getElementById('nav-glass-root');
+if (navGlassMount && reactDOM?.createRoot && GlassSurface) {
+  reactDOM.createRoot(navGlassMount).render(React.createElement(AlfariGlassLayer, { radius: 999 }));
+}
+const mobileMenuGlassMount = document.getElementById('mobile-menu-glass-root');
+if (mobileMenuGlassMount && reactDOM?.createRoot && GlassSurface) {
+  reactDOM.createRoot(mobileMenuGlassMount).render(React.createElement(AlfariGlassLayer, { radius: 20, menu: true }));
+}
 const mount = document.getElementById('yan-lanyard-mount');
 if (mount && reactDOM?.createRoot) {
   function ResponsiveYanLanyard() {
@@ -784,7 +883,7 @@ if (mount && reactDOM?.createRoot) {
       backImage: './assets/yan-card-back.svg',
       strapImage: './assets/yan-lanyard-fabric.svg',
       cardColor: '#04010e09', imagePadding: 0.015, strapColor: '#111827',
-      finish: 'glossy', anchor: mobile ? 'center' : 'right', orientation: 'portrait',
+      finish: 'glossy', anchor: 'center', orientation: 'portrait',
       size: mobile ? 0.66 : 0.62, cornerRadius: 0.25, strapLength: 0.59, strapWidth: 0.62,
       gravity: 1.2, damping: 0.35, elasticity: 0.7, breeze: 0.1,
       interactive: true, autoFlip: true, metal: 'silver', intro: true
