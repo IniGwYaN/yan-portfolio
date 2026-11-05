@@ -183,7 +183,7 @@ a{color:inherit;text-decoration:none}button,input,textarea{font:inherit}button{c
 @media(min-width:701px){
  .site{padding-top:22px}
  .home-layout{align-items:start;min-height:calc(100svh - 88px)}
- .home-copy{padding:0 0 48px}
+ .home-copy{padding:62px 0 48px}
  .home-copy>.eyebrow{display:none}
  .home-copy h1{margin:0 0 14px}
  .home-copy h1 .blue{display:none}
@@ -319,12 +319,12 @@ h1,h2,h3,.home-copy h1,.section-head h2,.contact-title,.message-panel h2,.id-pri
 <style>
 /* Alfari-style real 3D Lanyard integration */
 .hero-stage{overflow:visible;perspective:none;isolation:isolate}
-.yan-lanyard-mount{position:absolute;inset:0;width:100%;height:100%;z-index:5;pointer-events:auto;overflow:visible}
+.yan-lanyard-mount{position:absolute;inset:0;width:100%;height:100%;z-index:5;pointer-events:auto;overflow:visible;transform:translate3d(-clamp(24px,2.2vw,36px),-14px,0)}
 .hero-stage .lanyard{position:absolute!important;inset:0!important;top:0!important;left:0!important;width:100%!important;height:100%!important;transform:none!important;display:block!important;background:none!important;box-shadow:none!important;animation:none!important;overflow:visible;pointer-events:auto;touch-action:pan-y}
 .hero-stage .lanyard-canvas{display:block;width:100%;height:100%;outline:none;touch-action:pan-y;cursor:grab}
 .hero-stage .lanyard-canvas:active{cursor:grabbing}
 .hero-stage .drag-hint{z-index:8}
-@media(max-width:700px){.yan-lanyard-mount{inset:0}.hero-stage .lanyard{inset:0!important}.hero-stage .drag-hint{display:none}}
+@media(max-width:700px){.yan-lanyard-mount{inset:0;transform:translate3d(-8px,-10px,0)}.hero-stage .lanyard{inset:0!important}.hero-stage .drag-hint{display:none}}
 </style>
 
 <style id="yan-ui-cleanup-v3">
@@ -421,7 +421,7 @@ h1,h2,h3,.home-copy h1,.section-head h2,.contact-title,.message-panel h2,.id-pri
       <div class="social-mini"><a href="https://github.com/IniGwYaN" target="_blank" rel="noopener">GitHub ↗</a><a href="https://t.me/YaN_STAY_SAVE" target="_blank" rel="noopener">Telegram ↗</a><a href="https://t.me/PocoF1Goat" target="_blank" rel="noopener">Telegram Group ↗</a><a href="https://www.tiktok.com/@yan.royyan.01" target="_blank" rel="noopener">TikTok ↗</a></div>
     </div>
     <div class="hero-stage" aria-label="Kartu pengenal YAN yang dapat digerakkan">
-      <div id="yan-lanyard-mount" class="yan-lanyard-mount" aria-label="Kartu pengenal YAN 3D. Seret untuk mengayunkan, klik atau tap untuk membalik."></div><div class="drag-hint" aria-hidden="true">DRAG TO SWING · CLICK TO FLIP</div>
+      <div id="yan-lanyard-mount" class="yan-lanyard-mount" aria-label="Kartu pengenal YAN 3D"></div>
     </div>
   </div>
 </section>
@@ -434,8 +434,8 @@ h1,h2,h3,.home-copy h1,.section-head h2,.contact-title,.message-panel h2,.id-pri
   <section class="music-section" aria-labelledby="music-title">
     <div class="music-heading"><div><div class="eyebrow">Currently on repeat</div><h2 id="music-title">A little music<span> ♫</span></h2><p>Some sounds I keep coming back to.</p></div><span class="music-note">NOW PLAYING · YOUR PICK</span></div>
     <div class="music-grid">
-      <article class="music-card"><div class="music-card-head"><div><span class="music-kicker">JAZZ POP · DREAMY</span><h3>Laufey</h3><p>Soft melodies for slow moments.</p></div><a href="https://open.spotify.com/playlist/37i9dQZF1DZ06evO4iRboc" target="_blank" rel="noopener">Open Spotify ↗</a></div><iframe title="Laufey on Spotify" src="https://open.spotify.com/embed/playlist/37i9dQZF1DZ06evO4iRboc?utm_source=generator&theme=0" width="100%" height="352" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen></iframe></article>
-      <article class="music-card"><div class="music-card-head"><div><span class="music-kicker">INDIE POP · BEDROOM POP</span><h3>beabadoobee</h3><p>Guitar-driven songs for every mood.</p></div><a href="https://open.spotify.com/playlist/1l71b0NJ2X15gEmkUShIOm" target="_blank" rel="noopener">Open Spotify ↗</a></div><iframe title="beabadoobee on Spotify" src="https://open.spotify.com/embed/playlist/1l71b0NJ2X15gEmkUShIOm?utm_source=generator&theme=0" width="100%" height="352" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen></iframe></article>
+      <article class="music-card"><div class="music-card-head"><div><span class="music-kicker">JAZZ POP · DREAMY</span><h3>Laufey</h3><p>Soft melodies for slow moments.</p></div><a href="https://open.spotify.com/artist/7gW0r5CkdEUMm42w9XpyZO" target="_blank" rel="noopener">Open Spotify ↗</a></div><iframe title="Laufey on Spotify" src="https://open.spotify.com/embed/artist/7gW0r5CkdEUMm42w9XpyZO?utm_source=generator&theme=0" width="100%" height="352" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen></iframe></article>
+      <article class="music-card"><div class="music-card-head"><div><span class="music-kicker">INDIE POP · BEDROOM POP</span><h3>beabadoobee</h3><p>Guitar-driven songs for every mood.</p></div><a href="https://open.spotify.com/artist/35l9BRT7MXmM8bv2WDQiyB" target="_blank" rel="noopener">Open Spotify ↗</a></div><iframe title="beabadoobee on Spotify" src="https://open.spotify.com/embed/artist/35l9BRT7MXmM8bv2WDQiyB?utm_source=generator&theme=0" width="100%" height="352" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen></iframe></article>
     </div>
   </section>
 </section>
@@ -766,7 +766,7 @@ h1,h2,h3,.home-copy h1,.section-head h2,.contact-title,.message-panel h2,.id-pri
 })();
 </script>
 <script type="module">
-import { c as interop, s as reactModule, reactDOM } from './assets/alfari-react-runtime.js';
+import { c as interop, s as reactModule, reactDOM } from './assets/react-runtime.js';
 import Lanyard from './assets/yan-lanyard.js';
 const React = interop(reactModule(), 1);
 const mount = document.getElementById('yan-lanyard-mount');
