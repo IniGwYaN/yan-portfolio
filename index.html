@@ -783,13 +783,13 @@ if (mount && reactDOM?.createRoot) {
     const r = stage.getBoundingClientRect();
     if (!r.width || !r.height) return null;
     const mobile = matchMedia('(max-width: 700px)').matches, W = document.documentElement.clientWidth;
-    const top = mobile ? 0 : r.top + scrollY;
+    const top = mobile ? 170 : r.top + scrollY;
     const below = Math.max(0, Math.min(r.height * .16, view.getBoundingClientRect().bottom - r.bottom));
     const H = top + r.height + below;
     mount.style.cssText = `left:${-r.left}px;top:${-top}px;width:${W}px;height:${H}px;right:auto;bottom:auto`;
-    const card = mobile ? r.height * .66 : Math.max(180, Math.min(r.height * .72, innerHeight - 150));
-    const cardTop = mobile ? r.height * .297 : top + r.height - card - r.height * .06;
-    const x = mobile ? W / 2 : r.left + r.width * .33;
+    const card = mobile ? r.height * .68 : Math.max(200, Math.min(r.height * .76, innerHeight - 140));
+    const cardTop = mobile ? r.height * .30 : top + r.height - card - r.height * .05;
+    const x = W / 2;
     return { size: card / H, strapLength: Math.min(1, Math.max(0, (cardTop / H - .12) / .3)), anchor: x / W };
   }
   function ResponsiveYanLanyard() {
