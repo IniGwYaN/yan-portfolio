@@ -319,7 +319,7 @@ h1,h2,h3,.home-copy h1,.section-head h2,.contact-title,.message-panel h2,.id-pri
 <style>
 /* Alfari-style real 3D Lanyard integration */
 .hero-stage{overflow:visible;perspective:none;isolation:isolate}
-.yan-lanyard-mount{position:absolute;inset:0;width:100%;height:100%;z-index:5;pointer-events:auto;overflow:visible;transform:translate3d(calc(-1 * clamp(0px,11.1vw,170px)),0,0)}
+.yan-lanyard-mount{position:absolute;inset:0;width:100%;height:100%;z-index:5;pointer-events:auto;overflow:visible;transform:translate3d(calc(-clamp(70px,5.8vw,90px) - clamp(130px,11.1vw,170px)),-14px,0)}
 .hero-stage .lanyard{position:absolute!important;inset:0!important;top:0!important;left:0!important;width:100%!important;height:100%!important;transform:none!important;display:block!important;background:none!important;box-shadow:none!important;animation:none!important;overflow:visible;pointer-events:auto;touch-action:pan-y}
 .hero-stage .lanyard-canvas{display:block;width:100%;height:100%;outline:none;touch-action:pan-y;cursor:grab}
 .hero-stage .lanyard-canvas:active{cursor:grabbing}
@@ -380,14 +380,6 @@ h1,h2,h3,.home-copy h1,.section-head h2,.contact-title,.message-panel h2,.id-pri
 @media(min-width:768px) and (max-width:980px){.nav-wrap{width:max-content!important;max-width:calc(100vw - 30px)!important}.nav{min-height:56px!important}.nav button{min-height:38px!important;height:38px!important;padding-inline:12px!important;font-size:.73rem!important}.nav-brand span{display:none}}
 </style>
 
-
-<style id="yan-lanyard-viewport-and-scale-fix">
-/* Expand the transparent WebGL viewport on all sides. The Lanyard camera keeps the badge framed against the unchanged hero-stage height, so the larger viewport does not scale the physical card up. */
-.yan-lanyard-mount{inset:-140px -180px -270px -180px!important;width:auto!important;height:auto!important;transform:translate3d(calc(-1 * clamp(0px,11.1vw,170px) - 83px),0,0)!important;overflow:visible!important}
-.hero-stage>.yan-lanyard-mount>.lanyard{inset:0!important;width:100%!important;height:100%!important;overflow:visible!important}
-.hero-stage .lanyard-canvas{position:absolute!important;inset:0!important;width:100%!important;height:100%!important}
-@media(max-width:700px){.yan-lanyard-mount{inset:-100px -100px -240px -100px!important;transform:translate3d(0,0,0)!important}.hero-stage .lanyard-canvas{inset:0!important}}
-</style>
 </head>
 <body>
 <div class="shooting-star"></div><div class="shooting-star s2"></div>
@@ -793,7 +785,7 @@ if (mount && reactDOM?.createRoot) {
       strapImage: './assets/yan-lanyard-fabric.svg',
       cardColor: '#04010e09', imagePadding: 0.015, strapColor: '#111827',
       finish: 'glossy', anchor: mobile ? 'center' : 'right', orientation: 'portrait',
-      size: mobile ? 0.56 : 0.58, cornerRadius: 0.25, strapLength: 0.75, strapWidth: 0.62,
+      size: mobile ? 0.66 : 0.62, cornerRadius: 0.25, strapLength: 0.59, strapWidth: 0.62,
       gravity: 1.2, damping: 0.35, elasticity: 0.7, breeze: 0.1,
       interactive: true, autoFlip: true, metal: 'silver', intro: true
     });
