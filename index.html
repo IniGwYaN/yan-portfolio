@@ -779,17 +779,28 @@ if (mount && reactDOM?.createRoot) {
   const stage = mount.parentElement, view = stage.closest('.view') || stage;
   // The canvas is bigger than the stage: on desktop it reaches the top of the page (the strap hangs from the top edge)
   // and spans the full viewport width, so the card can be dragged anywhere without being clipped.
+  const CFG = {
+    /* ── PENGATURAN POSISI & UKURAN KARTU ─────────────────────
+       Ubah angkanya, simpan, lalu refresh halaman.
+       x   : posisi horizontal kartu (0 = paling kiri, 1 = paling kanan; 0.5 = tengah)
+       y   : posisi vertikal kartu dalam area hero (0 = atas, 1 = bawah; 0.5 = tengah)
+       size: ukuran kartu (0.4 kecil … 0.8 besar)
+    ─────────────────────────────────────────────────────────── */
+    x: 0.8,
+    y: 0.5,
+    size: 0.72
+  };
   function measure() {
     const r = stage.getBoundingClientRect();
     if (!r.width || !r.height) return null;
     const mobile = matchMedia('(max-width: 700px)').matches, W = document.documentElement.clientWidth;
-    const top = mobile ? 170 : r.top + scrollY;
+    const top = mobile ? 240 : r.top + scrollY;
     const below = Math.max(0, Math.min(r.height * .16, view.getBoundingClientRect().bottom - r.bottom));
     const H = top + r.height + below;
     mount.style.cssText = `left:${-r.left}px;top:${-top}px;width:${W}px;height:${H}px;right:auto;bottom:auto`;
-    const card = mobile ? r.height * .68 : Math.max(200, Math.min(r.height * .76, innerHeight - 140));
-    const cardTop = mobile ? r.height * .30 : top + r.height - card - r.height * .05;
-    const x = W / 2;
+    const card = r.height * CFG.size;
+    const cardTop = mobile ? (r.height - card) / 2 : top + r.height * CFG.y - card / 2;
+    const x = mobile ? W / 2 : W * CFG.x;
     return { size: card / H, strapLength: Math.min(1, Math.max(0, (cardTop / H - .12) / .3)), anchor: x / W };
   }
   function ResponsiveYanLanyard() {
