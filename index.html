@@ -382,11 +382,11 @@ h1,h2,h3,.home-copy h1,.section-head h2,.contact-title,.message-panel h2,.id-pri
 
 
 <style id="yan-lanyard-viewport-and-scale-fix">
-/* Expand the transparent WebGL viewport so the full strap and enlarged badge remain inside its drawing area. */
-.yan-lanyard-mount{inset:-80px -110px -70px!important;width:auto!important;height:auto!important;transform:translate3d(calc(-1 * clamp(0px,11.1vw,280px)),0,0)!important;overflow:visible!important}
+/* Extend only the invisible WebGL viewport downward; keep the badge, strap length and horizontal placement unchanged. */
+.yan-lanyard-mount{inset:-80px -110px -190px!important;width:auto!important;height:auto!important;transform:translate3d(calc(-1 * clamp(0px,11.1vw,280px)),0,0)!important;overflow:visible!important}
 .hero-stage>.yan-lanyard-mount>.lanyard{inset:0!important;width:100%!important;height:100%!important;overflow:visible!important}
 .hero-stage .lanyard-canvas{position:absolute!important;inset:0!important;width:100%!important;height:100%!important}
-@media(max-width:700px){.yan-lanyard-mount{inset:-55px -20px -45px!important;transform:translate3d(-8px,-10px,0)!important}.hero-stage .lanyard-canvas{inset:0!important}}
+@media(max-width:700px){.yan-lanyard-mount{inset:-55px -20px -165px!important;transform:translate3d(-8px,-10px,0)!important}.hero-stage .lanyard-canvas{inset:0!important}}
 </style>
 </head>
 <body>
